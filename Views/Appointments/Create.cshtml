@@ -1,0 +1,57 @@
+﻿<!--
+    /*
+ * Name: Ashok Sasitharan
+ * ID:100745484
+ * Date: December 1 2020
+ * Project: NETD3202 Lab5
+ * File: Create.cshtml
+ * Purpose: This file contains the create page form for appointments to add an appointment
+ */
+    -->
+@model NETD3202_ASasitharan_Lab5_Comm2.Models.Appointment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Appointment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="appointmentType" class="control-label">Appointment Type</label>
+                <input asp-for="appointmentType" class="form-control" required="required" />
+                <span asp-validation-for="appointmentType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="appointmentDate" class="control-label">Appointment Date</label>
+                <input asp-for="appointmentDate" class="form-control" required="required" />
+                <span asp-validation-for="appointmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="doctorId" class="control-label">Doctor Name</label>
+                <select asp-for="doctorId" class="form-control" asp-items="ViewBag.doctorId"></select>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="patientId" class="control-label">Patient ID</label>
+                <select asp-for="patientId" class="form-control" asp-items="ViewBag.patientId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

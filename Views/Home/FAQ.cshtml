@@ -1,0 +1,83 @@
+﻿<!--
+    /*
+ * Name: Ashok Sasitharan
+ * ID:100745484
+ * Date: December 1 2020
+ * Project: NETD3202 Lab5
+ * File: FAQ.cshtml
+ * Purpose: This file contains the faq page with collapsble cards
+ */
+    -->
+@{
+    ViewData["Title"] = "FAQ";
+}
+<html>
+<body>
+    <h1>Welcome to our FAQ</h1>
+    <p>Here in the FAQ we have the answers to your frequently asked questions. If you cannot find the answers that you are looking for please contact us.</p>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Problems when trying to create or edit a doctor
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    To ensure that your record for entering or editing a doctor will not have any errors follow the validation list below.
+                    <ul>
+                        <li>The doctors first name must be greater than or equal to 2 characters</li>
+                        <li>The doctors last name must be greater than or equal to 2 characters</li>
+                        <li>The doctors phone number must be a valid 10 digit phone number. (Formatting is unnecessary)</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Problems when trying to create or edit a patient
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    To ensure that your record for entering or editing a patient will not have any errors follow the validation list below.
+                    <ul>
+                        <li>The patients first name must be greater than or equal to 2 characters</li>
+                        <li>The patients last name must be greater than or equal to 2 characters</li>
+                        <li>The patients phone number must be a valid 10 digit phone number. (Formatting is unnecessary)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Problems when trying to create or edit an appointment
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                    To ensure that your record for entering or editing an appointment will not have any errors follow the validation list below.
+                    <ul>
+                        <li>The appointment type must be greater than or equal to 2 characters</li>
+                        <li>The appointment date cannot be empty</li>
+                    </ul>
+                    <p>
+                        If the dropdown list for selecting a doctor or patient for the appointment is blank it means that there are
+                        no doctors or patients on the system. If there should be records on the system please contact us as it could be a database problem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿<!--
+    /*
+ * Name: Ashok Sasitharan
+ * ID:100745484
+ * Date: December 1 2020
+ * Project: NETD3202 Lab5
+ * File: Edit.cshtml
+ * Purpose: This file contains the edit page for doctors to edit the details of a doctor
+ */
+    -->
+@model NETD3202_ASasitharan_Lab5_Comm2.Models.Doctor
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Doctor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="doctorId" />
+            <div class="form-group">
+                <label asp-for="doctorfname" class="control-label"></label>
+                <input asp-for="doctorfname" class="form-control" />
+                <span asp-validation-for="doctorfname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="doctorlname" class="control-label"></label>
+                <input asp-for="doctorlname" class="form-control" />
+                <span asp-validation-for="doctorlname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="doctorphone" class="control-label"></label>
+                <input asp-for="doctorphone" class="form-control" />
+                <span asp-validation-for="doctorphone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

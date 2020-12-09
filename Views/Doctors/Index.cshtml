@@ -1,0 +1,58 @@
+﻿<!--
+    /*
+ * Name: Ashok Sasitharan
+ * ID:100745484
+ * Date: December 1 2020
+ * Project: NETD3202 Lab5
+ * File: Index.cshtml
+ * Purpose: This file contains the index page for doctors which shows the doctors details in tabular format
+ */
+    -->
+@model IEnumerable<NETD3202_ASasitharan_Lab5_Comm2.Models.Doctor>
+
+@{
+    ViewData["Title"] = "Doctors";
+}
+
+<h1>Doctors</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Phone Number
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.doctorfname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.doctorlname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.doctorphone)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.doctorId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.doctorId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.doctorId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

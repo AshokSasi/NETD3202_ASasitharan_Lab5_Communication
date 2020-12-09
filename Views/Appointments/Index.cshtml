@@ -1,0 +1,64 @@
+﻿<!--
+    /*
+ * Name: Ashok Sasitharan
+ * ID:100745484
+ * Date: December 1 2020
+ * Project: NETD3202 Lab5
+ * File: Index.cshtml
+ * Purpose: This file contains the index page for appointments which shows the appointment details in tabular format
+ */
+    -->
+@model IEnumerable<NETD3202_ASasitharan_Lab5_Comm2.Models.Appointment>
+
+@{
+    ViewData["Title"] = "Appointments";
+}
+
+<h1>Appointments</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Appointment Type
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Doctor
+            </th>
+            <th>
+                Patient
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.appointmentType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.appointmentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doctor.fullname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Patient.patientfullname)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.appointmentId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.appointmentId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.appointmentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

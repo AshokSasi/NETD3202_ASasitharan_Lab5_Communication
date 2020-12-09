@@ -1,0 +1,46 @@
+﻿<!--
+    /*
+ * Name: Ashok Sasitharan
+ * ID:100745484
+ * Date: December 1 2020
+ * Project: NETD3202 Lab5
+ * File: Details.cshtml
+ * Purpose: This file contains the details page  for patients to view the details of a patient
+ */
+    -->
+@model NETD3202_ASasitharan_Lab5_Comm2.Models.Patient
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Patient</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.patientfname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.patientfname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.patientlname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.patientlname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.patientphone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.patientphone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.patientId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
