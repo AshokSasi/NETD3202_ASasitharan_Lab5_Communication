@@ -2,7 +2,7 @@
  * Name: Ashok Sasitharan
  * ID:100745484
  * Date: December 1 2020
- * Project: NETD3202 Lab5
+ * Project: NETD3202 Lab5 Comm2
  * File: AppointmentsController.cs
  * Purpose: This file is the appointments controller and checks if the user input is valid before putting it into the database
  */

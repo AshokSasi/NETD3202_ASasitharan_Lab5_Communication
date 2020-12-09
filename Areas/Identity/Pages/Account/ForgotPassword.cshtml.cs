@@ -45,7 +45,9 @@ namespace NETD3202_ASasitharan_Lab5_Comm2.Areas.Identity.Pages.Account
                 if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
+                    //set a variable to true if the email exists
                     exists = "false";
+                    //set the email exist status to a TempData variable
                     TempData["exists"] = exists;
                     return RedirectToPage("./ForgotPasswordConfirmation");
                 }
@@ -64,14 +66,18 @@ namespace NETD3202_ASasitharan_Lab5_Comm2.Areas.Identity.Pages.Account
                     Input.Email,
                     "Reset Password",
                     $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
-
+                
+                //Assign the url to a string variable to be sent to the ForgotPasswordConfirmation page
                 changepass = Url.Page(
                     "/Account/ResetPassword",
                     pageHandler: null,
                     values: new { area = "Identity", code },
                     protocol: Request.Scheme);
+                //Set the url to a temp data variable
                 TempData["mydata"] = changepass;
+                //set a variable to true if the email exists
                 exists = "true";
+                //set the email exist status to a TempData variable
                 TempData["exists"] = exists;
                 return RedirectToPage("./ForgotPasswordConfirmation");
             }
